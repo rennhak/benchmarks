@@ -1,0 +1,44 @@
+kroot@loki\MemTotal:        3581244 kB
+MemFree:          922032 kB
+MemAvailable:     966984 kB
+Buffers:           11072 kB
+Cached:            48764 kB
+SwapCached:         6852 kB
+Active:            48552 kB
+Inactive:          23680 kB
+Active(anon):      10036 kB
+Inactive(anon):    11008 kB
+Active(file):      38516 kB
+Inactive(file):    12672 kB
+Unevictable:       32312 kB
+Mlocked:           32312 kB
+SwapTotal:      33554428 kB
+SwapFree:       33510300 kB
+Dirty:                52 kB
+Writeback:             0 kB
+AnonPages:         41988 kB
+Mapped:            19916 kB
+Shmem:              2092 kB
+Slab:              65792 kB
+SReclaimable:      22096 kB
+SUnreclaim:        43696 kB
+KernelStack:        4544 kB
+PageTables:         3524 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    35345048 kB
+Committed_AS:     151096 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:     2130756 kB
+VmallocChunk:   34356085236 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:    33232932 kB
+DirectMap2M:           0 kB
+kzsh\
