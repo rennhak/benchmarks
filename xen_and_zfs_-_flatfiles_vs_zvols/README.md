@@ -46,20 +46,26 @@ Versions & Options used
   bon_csv2html < result.csv > result.html
 - Both 8k and 4k volblocksize on ZVOL was tested.
 - Xen flat files were trasnferred to ZVOLs via
-  dd if=/zfs-tank/bonnie/domains/bonnie/disk.img | pv | dd of=/dev/zvol/zfs-tank/bonnie
+
+  ```dd if=/zfs-tank/bonnie/domains/bonnie/disk.img | pv | dd of=/dev/zvol/zfs-tank/bonnie```
 - Two identical SATA Disks
+
   - hdparam
+
+    ```
     Model=ST3000DM001-9YN166, FwRev=CC4B, SerialNo=Z1F16L6F
     Config={ HardSect NotMFM HdSw>15uSec Fixed DTR>10Mbs RotSpdTol>.5% }
     RawCHS=16383/16/63, TrkSize=0, SectSize=0, ECCbytes=4
     BuffType=unknown, BuffSize=unknown, MaxMultSect=16, MultSect=16
     CurCHS=16383/16/63, CurSects=16514064, LBA=yes, LBAsects=5860533168
     IORDY=on/off, tPIO={min:120,w/IORDY:120}, tDMA={min:120,rec:120}
+    ```
 
     Model ST3000DM001 explicitly supports Advanced Disk Format.
 
   - gdisk print
 
+    ```
     Disk /dev/sda: 5860533168 sectors, 2.7 TiB
     Logical sector size: 512 bytes
     Disk identifier (GUID): F6445E8B-B329-434D-B2F1-9BA7FDF3701D
@@ -72,13 +78,14 @@ Versions & Options used
        1            4096         1052671   512.0 MiB   FD00  
        2         1052672       545259520   259.5 GiB   FD00  Linux RAID
        3       545261568      5860533134   2.5 TiB     FD00  Linux RAID
+    ```
 
   - /dev/sda3 and /dev/sdb3 is used directly by dm-luks its not part of any Linux RAID
 
   - Last partitions are dm-luks devices which feeds into zpool.
     Since zpool supports advanced format we created it with
 
-    zpool create -o ashift=12 zfs-tank mirror crypto-disk-01 crypto-disk-02
+    ```zpool create -o ashift=12 zfs-tank mirror crypto-disk-01 crypto-disk-02```
 
   - ZFS was *not* used with extra SSD cache disk etc. and only limited amount of CPU and RAM was
     given to Dom0 (4GB RAM, 2 CPUs).
