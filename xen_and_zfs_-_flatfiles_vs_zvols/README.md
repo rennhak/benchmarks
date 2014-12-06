@@ -16,7 +16,7 @@ Tests
 - Xen HVM with disk.img and swap.img on /zfs-tank pool
 - Xen HVM with /dev/zvol/zfs-tank/bonnie and swap.img on /zfs-tank pool
 - Xen HVM with /dev/zvol/zfs-tank/bonnie and /../zfs-tank/bonnie-swap
-  o Test on volblocksize 4k and 8k
+  - Test on volblocksize 4k and 8k
 
 
 Result
@@ -24,7 +24,8 @@ Result
 
 Unconclusive. It seems that flatfile and zvol performance is pretty close in some, and quite
 different in other fields. Generally zvol handling makes more sense from a sysops perspective.
-Generally I noticed a drop in CPU demand when on zvol, need to investigate further.
+Generally I noticed a drop in CPU demand when on zvol, need to investigate further also if bonnie is
+the right tool for this job or if I'm having measurement issues.
 
 
 Versions & Options used
